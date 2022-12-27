@@ -27,8 +27,7 @@ public class ProductController {
 	public static final String PRODUCT_SERVICE = "productService";
 
 	@GetMapping(value = "/getproducts")
-	//@CircuitBreaker(name = PRODUCT_SERVICE, fallbackMethod = "getAvailableProducts")
-	@Retry(name = PRODUCT_SERVICE, fallbackMethod = "getAvailableProducts")
+	@CircuitBreaker(name = PRODUCT_SERVICE, fallbackMethod = "getAvailableProducts")
 	public ResponseEntity<List<Product>> getAllProductsData() {
 		return feignUtility.getAllProducts();
 	}

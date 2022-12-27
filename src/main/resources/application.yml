@@ -25,7 +25,3 @@ resilience4j:  circuitbreaker:    instances:      productService:
           slidingWindowType : COUNT_BASED
              
   
-  retry:    instances:
-      productService:
-       max-retry-attempts: 5
-       wait-duration: 10s      
